@@ -1,0 +1,106 @@
+{
+  "target_journal": "Computer Methods and Programs in Biomedicine Update (Elsevier, ISSN 2666-9900)",
+  "article_title": "Uncertainty-Aware Cross-Modal Attention Fusion for Smartphone-Based Skin Cancer Triage: A Cross-Continental External Validation and Fairness Study on ISIC 2024 and PAD-UFES-20",
+  "corresponding_author": {
+    "name": "Dr. Juan Marcos Vilchez Canchari, PhD",
+    "degrees": "Doctor en Gestión Pública y Gobernabilidad, Maestro en Inteligencia Artificial, Maestro en Gestión Pública y Maestro en Administración de Negocios - MBA",
+    "affiliation": "Universidad César Vallejo, Lima, Peru",
+    "email": "jvilchezca@ucv.edu.pe",
+    "orcid": "https://orcid.org/0000-0002-7758-7589"
+  },
+  "authors": [
+    {
+      "order": 1,
+      "name": "Dr. Juan Marcos Vilchez Canchari, PhD",
+      "degrees": "Doctor en Gestión Pública y Gobernabilidad, Maestro en Inteligencia Artificial, Maestro en Gestión Pública y Maestro en Administración de Negocios - MBA",
+      "affiliation": "Universidad César Vallejo, Lima, Peru",
+      "email": "jvilchezca@ucv.edu.pe",
+      "orcid": "https://orcid.org/0000-0002-7758-7589"
+    },
+    {
+      "order": 2,
+      "name": "Dra. Ruth Janett Palomino Rojas, PhD",
+      "degrees": "Doctora en Gestión Pública y Gobernabilidad y Maestra en Gestión de los Servicios de Salud",
+      "affiliation": "Universidad Privada San Juan Bautista, Lima, Peru",
+      "email": "ruthj.palomino@upsjb.edu.pe",
+      "orcid": "https://orcid.org/0000-0003-1531-3408"
+    },
+    {
+      "order": 3,
+      "name": "Dra. Mirian Corina Cribillero Roca, PhD",
+      "degrees": "Doctora en Ciencias de la Salud y Maestra en Epidemiología",
+      "affiliation": "Universidad Nacional del Callao, Callao, Peru",
+      "email": "mccribilleror@unac.edu.pe",
+      "orcid": "https://orcid.org/0000-0003-4683-3633"
+    },
+    {
+      "order": 4,
+      "name": "Dra. Luz Chavela De la Torre Guzmán, PhD",
+      "degrees": "Doctora en Ciencias de la Salud y Maestra en Administración de Servicios de la Salud",
+      "affiliation": "Universidad Nacional del Callao, Callao, Peru",
+      "email": null,
+      "orcid": "https://orcid.org/0000-0001-9296-7355"
+    },
+    {
+      "order": 5,
+      "name": "Dra. Vilma María Arroyo Vigil, PhD",
+      "degrees": "Doctora en Salud Pública y Maestra en Salud Pública y Gestión Sanitaria",
+      "affiliation": "Universidad Nacional del Callao, Callao, Peru",
+      "email": null,
+      "orcid": "https://orcid.org/0000-0003-4235-7336"
+    }
+  ],
+  "github_repository": "https://github.com/jvilchez-ucv/CM-GAF-Skin-Cancer-Triage",
+  "hardware_used": "NVIDIA L4 (23.66 GB VRAM, torch.bfloat16)",
+  "backbone": "convnext_tiny.fb_in22k",
+  "tabular_dim": 13,
+  "tabular_features": [
+    "age_years",
+    "diameter_mm",
+    "age_years_missing",
+    "diameter_mm_missing",
+    "sex_clean_female",
+    "sex_clean_male",
+    "sex_clean_unknown",
+    "site_clean_anterior torso",
+    "site_clean_head/neck",
+    "site_clean_lower extremity",
+    "site_clean_posterior torso",
+    "site_clean_unknown",
+    "site_clean_upper extremity"
+  ],
+  "conformal_calibration": {
+    "alpha_fn": 0.05,
+    "alpha_fp": 0.1,
+    "tau_rule_out_source_isic": 0.159,
+    "tau_rule_in_source_isic": 0.3984,
+    "isic_internal_holdout_sensitivity_pct": 96.15,
+    "isic_internal_holdout_safe_rule_out_pct": 78.4,
+    "isic_internal_holdout_grey_zone_pct": 11.8,
+    "pad_ufes_zeroshot_sensitivity_pct": 100.0,
+    "pad_ufes_zeroshot_grey_zone_pct": 3.44,
+    "tau_rule_out_local_mondrian_pad": {
+      "Fitzpatrick_I_II": 0.524,
+      "Fitzpatrick_III_IV": 0.511,
+      "Fitzpatrick_V_VI": 0.489,
+      "Fitzpatrick_V_VI_calibration_strategy": "Pooled Fitzpatrick III-VI calibration quantile with leave-one-out evaluation to avoid empty positive splits (n_1=1)",
+      "Unreported": 0.509
+    },
+    "pad_ufes_local_mondrian_sensitivity_pct": 95.5,
+    "pad_ufes_local_mondrian_grey_zone_pct": 22.7
+  },
+  "cohorts": {
+    "ISIC_2024_SLICE_3D": {
+      "total_lesions": 401059,
+      "malignant_lesions": 393,
+      "prevalence_pct": 0.098
+    },
+    "PAD_UFES_20_Brazil": {
+      "total_lesions": 2298,
+      "malignant_lesions": 1089,
+      "prevalence_pct": 47.39,
+      "fitzpatrick_annotated_lesions": 1494,
+      "fitzpatrick_unreported_lesions": 804
+    }
+  }
+}

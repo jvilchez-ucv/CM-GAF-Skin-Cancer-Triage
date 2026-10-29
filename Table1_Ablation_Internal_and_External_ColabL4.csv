@@ -1,0 +1,7 @@
+Cohort,Model Architecture,ROC-AUC (95% CI),pAUC@80%TPR (95% CI),PR-AUC (95% CI),ECE ↓,Brier ↓,p-value vs. Base (Bootstrap / DeLong)
+"ISIC 2024 (Internal Holdout, n=80,212)",Unimodal Vision Baseline,0.9061 (0.8682–0.9391),0.1294 (0.1051–0.1553),0.0271 (0.0162–0.0518),0.2664,0.0800,Ref.
+"ISIC 2024 (Internal Holdout, n=80,212)",Late Concatenation Fusion,0.9532 (0.9331–0.9702),0.1649 (0.1497–0.1790),0.0942 (0.0491–0.1630),0.1697,0.0448,< 0.001 (3.8 × 10⁻⁶)
+"ISIC 2024 (Internal Holdout, n=80,212)",Proposed CM-GAF (FiLM + Cross-Attn),0.9431 (0.9140–0.9681),0.1560 (0.1293–0.1785),0.0703 (0.0402–0.1271),0.1900,0.0573,0.0098 (0.0083)
+"PAD-UFES-20 (External Brazil OOD, N=2,298)",Unimodal Vision Baseline,0.7661 (0.7460–0.7860),0.0792 (0.0722–0.0871),0.7241 (0.6950–0.7531),0.1065,0.2111,Ref.
+"PAD-UFES-20 (External Brazil OOD, N=2,298)",Late Concatenation Fusion,0.7262 (0.7061–0.7490),0.0726 (0.0661–0.0799),0.6621 (0.6310–0.6970),0.1455,0.2320,< 0.001 (2.1 × 10⁻⁴)
+"PAD-UFES-20 (External Brazil OOD, N=2,298)",Proposed CM-GAF (FiLM + Cross-Attn),0.7951 (0.7770–0.8130),0.1002 (0.0931–0.1072),0.7162 (0.6870–0.7470),0.1333,0.2069,< 0.001 (5.0 × 10⁻⁴)*
